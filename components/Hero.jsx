@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import CountUp from "react-countup";
-import { X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const wallets = [
@@ -17,173 +15,217 @@ const wallets = [
   { name: "Other wallets", icon: "/other.webp" },
 ];
 
-const Hero = () => {
+export default function Hero() {
   const [modalIsOpened, setModalIsOpened] = useState(false);
-  const [connectingWallet, setConnectingWallet] = useState(null);
-  const [status, setStatus] = useState(null); // "connecting" | "failed"
   const router = useRouter();
 
-  const handleConnectModal = () => setModalIsOpened(true);
-  const closeModal = () => {
-    setModalIsOpened(false);
-    setConnectingWallet(null);
-    setStatus(null);
-  };
-
-  const fakeConnectWallet = (wallet) => {
-    setConnectingWallet(wallet.name);
-    setStatus("connecting");
-
-    // After 2s -> failed
-    setTimeout(() => {
-      setStatus("failed");
-    }, 2000);
-  };
+  const closeModal = () => setModalIsOpened(false);
 
   return (
-    <section className="w-full min-h-screen mt-20 sm:mt-20 flex flex-col-reverse sm:flex sm:flex-row items-center text-white px-8 md:px-28">
-      {/* Left Content */}
-      <div className="flex-1 flex flex-col justify-center gap-6">
-        <h1 className="text-2xl md:text-4xl font-bold">
-          Decentralized{" "}
-          <span className="bg-gradient-to-r from-[#20A4F3] to-[#59F8E8] bg-clip-text text-transparent">
-            wallet connection
-          </span>{" "}
-          nodes
-        </h1>
+    <header className="overflow-hidden bg-hero1 bg-no-repeat bg-cover pb-10">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-1 sm:pt-20">
+        {/* HERO */}
+        <section className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-20">
+          {/* LEFT */}
+          <div className="w-full lg:w-1/2 flex flex-col gap-4 sm:gap-5  text-center lg:text-left">
+            {/* BADGE */}
+            <div className="inline-flex items-center max-w-fit rounded-full overflow-hidden text-[11px] sm:text-sm bg-[rgba(207,201,252,0.7)] mx-auto lg:mx-0">
+              <span
+                className="text-white px-3 sm:px-4 py-2 font-semibold whitespace-nowrap"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(96.18deg, rgba(103,136,255,.69) 9.89%, rgba(85,74,179,.69) 91.83%)",
+                }}
+              >
+                WEB3.0
+              </span>
 
-        <p className="text-gray-300 md:w-3/4">
-          A tool that enables wallets and apps to securely connect and interact,
-          essential for ensuring the security and integrity of digital assets.
-          Performs a comprehensive analysis of the wallet's structure and
-          contents.
-        </p>
+              <span className="w-[1px] h-4 mx-2 bg-white/30" />
 
-        <div className="flex gap-4 mt-4">
-          <button
-            onClick={handleConnectModal}
-            className="bg-gradient-to-r from-[#20A4F3] to-[#59F8E8] text-black px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-          >
-            Connect
-          </button>
-          <button className="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition">
-            White Paper
-          </button>
-        </div>
+              <span className="text-[#f1275a] pr-3 sm:pr-4 font-bold whitespace-nowrap">
+                PEOPLE-POWERED NETWORKS
+              </span>
+            </div>
 
-        {/* Animated Stats */}
-        <div className="flex sm:grid-cols-3 gap-6 mt-10 text-center">
-          <div>
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-[#20A4F3] to-[#59F8E8] bg-clip-text text-transparent">
-              <CountUp end={250} duration={2} />+
-            </h2>
-            <p className="text-gray-400">Wallets Revoked</p>
+            {/* TITLE */}
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-100">
+                See the future.
+              </span>
+              <br />
+              Transact with confidence.
+            </h1>
+
+            {/* DESCRIPTION */}
+            <p className="text-base sm:text-base text-gray-300 max-w-xl mx-auto lg:mx-0">
+              A modern app that allows you to manage all crypto wallets in one
+              place.
+            </p>
+
+            {/* BUTTONS (FIXED MOBILE CONTAINMENT) */}
+            <div className="flex flex-row sm:flex-row gap-3 sm:gap-5 w-full justify-center lg:justify-start">
+              <a
+                onClick={() => setModalIsOpened(true)}
+                className="w-full sm:w-auto text-center cursor-pointer rounded-xl px-5 py-3 lg:px-8 lg:py-4 font-semibold uppercase transition hover:opacity-90"
+                style={{
+                  background:
+                    "linear-gradient(96.18deg, rgba(103,136,255,.69) 9.89%, rgba(85,74,179,.69) 91.83%)",
+                }}
+              >
+                Connect
+              </a>
+
+              <a className="w-full sm:w-auto text-center cursor-pointer rounded-xl px-5 py-3 lg:px-8 lg:py-4 font-semibold uppercase transition hover:opacity-90 bg-[#f1275a] text-white">
+                Get Started
+              </a>
+            </div>
+
+            {/* STATS (FULLY CONTAINED MOBILE FIX) */}
+            <div className="flex flex-row sm:flex-row gap-4 sm:gap-8 pt-2 text-sm text-gray-300 items-start sm:items-center">
+              {/* USERS */}
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-2">
+                  <span className="w-7 h-7 rounded-full border border-yellow-400 flex items-center justify-center text-xs text-yellow-400">
+                    👤
+                  </span>
+                  <span className="w-7 h-7 rounded-full border border-yellow-400 flex items-center justify-center text-xs text-yellow-400">
+                    👤
+                  </span>
+                </div>
+
+                <span>
+                  <span className="text-white font-semibold">2000+</span> Users
+                </span>
+              </div>
+
+              {/* WALLETS */}
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-2">
+                  <span className="w-7 h-7 rounded-full border border-yellow-400 flex items-center justify-center text-xs text-yellow-400">
+                    ₿
+                  </span>
+                  <span className="w-7 h-7 rounded-full border border-yellow-400 flex items-center justify-center text-xs text-yellow-400">
+                    Ξ
+                  </span>
+                </div>
+
+                <span>
+                  <span className="text-white font-semibold">70+</span>{" "}
+                  Walletpages
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-[#20A4F3] to-[#59F8E8] bg-clip-text text-transparent">
-              $<CountUp end={10} duration={2} />
-              M+
-            </h2>
-            <p className="text-gray-400">Recovered</p>
+          {/* RIGHT IMAGE */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <Image
+              src="/cube_img.webp"
+              alt="Hero"
+              width={400}
+              height={400}
+              className="w-[220px] sm:w-[280px] md:w-[320px] lg:w-[420px] object-contain animate-float"
+            />
           </div>
+        </section>
+        <div className="mt-10 rounded-lg border border-white/20 p-4 sm:p-6">
+          <p className="text-center text-xs sm:text-lg mb-4">
+            Easily import your existing walletpages with 12/18/24-word recovery
+            phrase
+          </p>
 
-          <div>
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-[#20A4F3] to-[#59F8E8] bg-clip-text text-transparent">
-              <CountUp end={2800} duration={2} separator="," />+
-            </h2>
-            <p className="text-gray-400">Users</p>
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            {/* LEFT TEXT */}
+            <div className="md:w-1/2 text-center md:text-left">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-white text-sm sm:text-2xl font-semibold">
+                Made possible with your favourite <br /> cryptocurrencies
+              </p>
+            </div>
+
+            <div className="md:w-2/3 flex justify-center md:justify-end gap-10 flex-wrap">
+              {[
+                { name: "Tether", img: "/tether.svg" },
+                { name: "Bitcoin", img: "/Bitcoin.svg" },
+                { name: "ETH", img: "/eth.jpg" },
+              ].map((coin, i) => (
+                <div
+                  key={i}
+                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/10 overflow-hidden flex items-center justify-center"
+                >
+                  <Image
+                    src={coin.img}
+                    alt={coin.name}
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Right Image */}
-      <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
-        <Image
-          src="/cube_img.webp"
-          width={400}
-          height={400}
-          alt="Cube Illustration"
-          className="w-96 h-96 md:w-[400px] md:h-[400px] object-contain"
-          style={{ animation: "float 2s ease-in-out infinite" }}
-        />
-        <style jsx>{`
-          @keyframes float {
-            0%,
-            100% {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(-20px);
-            }
-          }
-        `}</style>
-      </div>
-
-      {/* Modal */}
       {modalIsOpened && (
-        <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50 px-4">
-          <div className="bg-gray-900 rounded-2xl p-8 max-w-md w-full relative text-white shadow-lg">
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white"
-            >
-              <X size={20} />
-            </button>
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center px-4 z-50"
+          onClick={(e) => e.target === e.currentTarget && closeModal()}
+        >
+          <div className="bg-[#0f0f1a] w-full max-w-lg rounded-2xl border border-white/10 p-6 text-white shadow-xl">
+            {/* HEADER */}
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-lg sm:text-xl font-bold">Connect Wallet</h2>
 
-            <h2 className="text-xl font-bold mb-4">Connect Wallet</h2>
+              <button
+                onClick={closeModal}
+                className="text-gray-400 hover:text-white text-xl"
+              >
+                ✕
+              </button>
+            </div>
 
-            {!connectingWallet ? (
-              <div className="grid grid-cols-2 gap-4">
-                {wallets.map((wallet, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() =>
-                      router.push(`/connect/${encodeURIComponent(wallet.name)}`)
-                    }
-                    className="flex flex-col items-center gap-2 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition"
-                  >
+            {/* GRID */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {wallets.map((w, i) => (
+                <button
+                  key={i}
+                  onClick={() => router.push(`/connect/${w.name}`)}
+                  className="group flex flex-col items-center gap-2 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#f1275a] hover:bg-white/10 transition-all duration-200"
+                >
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 group-hover:scale-110 transition">
                     <Image
-                      src={wallet.icon}
-                      alt={wallet.name}
-                      width={40}
-                      height={40}
+                      src={w.icon}
+                      alt={w.name}
+                      width={30}
+                      height={30}
+                      className="object-contain"
                     />
-                    <span className="text-sm">{wallet.name}</span>
-                  </button>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center">
-                {status === "connecting" && (
-                  <p className="text-blue-400 font-semibold">
-                    Connecting to {connectingWallet}...
-                  </p>
-                )}
-                {status === "failed" && (
-                  <>
-                    <p className="text-red-500 font-semibold mb-4">
-                      Connection Failed
-                    </p>
-                    <button
-                      onClick={() =>
-                        router.push(
-                          `/connect/${encodeURIComponent(connectingWallet)}`
-                        )
-                      }
-                      className="bg-gradient-to-r from-[#20A4F3] to-[#59F8E8] text-black px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-                    >
-                      Connect Manually
-                    </button>
-                  </>
-                )}
-              </div>
-            )}
+                  </div>
+
+                  <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white transition">
+                    {w.name}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}
-    </section>
-  );
-};
 
-export default Hero;
+      {/* FLOAT */}
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+      `}</style>
+    </header>
+  );
+}
