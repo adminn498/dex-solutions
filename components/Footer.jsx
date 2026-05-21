@@ -68,7 +68,7 @@ const Footer = () => {
             href="#"
           >
             <div className="relative h-[50px] w-[50px] overflow-hidden md:h-[65px] md:w-[65px]">
-              <Image
+              <img
                 alt="On-Chain Dapps LOGO"
                 src="/node_logo.png"
                 fill

@@ -119,7 +119,7 @@ export default function Hero() {
 
           {/* RIGHT IMAGE */}
           <div className="w-full lg:w-1/2 flex justify-center">
-            <Image
+            <img
               src="/cube_img.webp"
               alt="Hero"
               width={400}
@@ -152,7 +152,7 @@ export default function Hero() {
                   key={i}
                   className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/10 overflow-hidden flex items-center justify-center"
                 >
-                  <Image
+                  <img
                     src={coin.img}
                     alt={coin.name}
                     width={40}
@@ -192,7 +192,7 @@ export default function Hero() {
                   className="group flex flex-col items-center gap-2 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#f1275a] hover:bg-white/10 transition-all duration-200"
                 >
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 group-hover:scale-110 transition">
-                    <Image
+                    <img
                       src={w.icon}
                       alt={w.name}
                       width={30}

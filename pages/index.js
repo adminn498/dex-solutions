@@ -370,7 +370,7 @@ const featureItems = [
                        className="group flex flex-col items-center gap-2 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#f1275a] hover:bg-white/10 transition-all duration-200"
                      >
                        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 group-hover:scale-110 transition">
-                         <Image
+                         <img
                            src={w.icon}
                            alt={w.name}
                            width={30}

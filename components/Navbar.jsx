@@ -14,7 +14,7 @@ const Navbar = () => {
         className="flex min-w-max items-center justify-center space-x-2"
       >
         <div className="relative h-[50px] w-[50px] overflow-hidden sm:h-[80px]  sm:w-[80px]">
-          <Image
+          <img
             src="/node_logo.png"
             alt="On-Chain Dapps LOGO"
             fill

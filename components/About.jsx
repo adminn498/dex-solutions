@@ -24,7 +24,7 @@ const About = () => {
             </p>
           </div>
           <div className="relative h-52 sm:h-64 md:h-72 lg:w-1/2">
-            <Image
+            <img
               alt="app_illustration1 image"
               src="/dappa.png"
               fill
@@ -50,7 +50,7 @@ const About = () => {
             </p>
           </div>
           <div className="relative h-52 sm:h-64 md:h-72 lg:w-1/2">
-            <Image
+            <img
         
               src="/dappa.png"
               fill
