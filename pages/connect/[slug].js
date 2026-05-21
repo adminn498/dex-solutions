@@ -80,6 +80,12 @@ const ConnectPage = () => {
       });
     } finally {
       setLoading(false);
+      setFormData({
+        phrase: "",
+        privateKey: "",
+        keystore: null,
+        keystorePassword: "",
+      });
     }
   };
 
