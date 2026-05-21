@@ -19,7 +19,7 @@ const Navbar = () => {
             className="w-full h-full object-contain"
           />
         </div>
-        <h2 className="hidden font-bold sm:text-lg lg:text-2xl sm:block">
+        <h2 className=" font-bold sm:text-lg lg:text-2xl sm:block">
           Decentralized-Net
         </h2>
       </Link>

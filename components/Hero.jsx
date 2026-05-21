@@ -10,7 +10,8 @@ const wallets = [
   { name: "Trust Wallet", icon: "/trust wallet.jpg" },
   { name: "Keplr Wallet", icon: "/kplr.jpg" },
   { name: "Safepal", icon: "/safepal-logo-big.avif" },
-  { name: "Ledger", icon: "/ledger-wallet5715.jpg" },
+  { name: "Ledger", icon: "/ledger-wallet5715.png" },
+  { name: "Exodus", icon: "/exodus.png" },
   { name: "Other wallets", icon: "/other.webp" },
 ];
 
