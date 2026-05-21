@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 const About = () => {
   return (
@@ -23,12 +22,11 @@ const About = () => {
               whitelist issues, withdrawal issues and bridging errors.
             </p>
           </div>
-          <div className="relative h-52 sm:h-64 md:h-72 lg:w-1/2">
+          <div className="h-52 sm:h-64 md:h-72 lg:w-1/2 flex items-center justify-center">
             <img
-              alt="app_illustration1 image"
+              alt="app illustration 1"
               src="/dappa.png"
-              fill
-              style={{ objectFit: "contain", objectPosition: "center" }}
+              className="w-full h-full object-contain object-center"
             />
           </div>
         </div>
@@ -49,12 +47,11 @@ const About = () => {
               platform.
             </p>
           </div>
-          <div className="relative h-52 sm:h-64 md:h-72 lg:w-1/2">
+          <div className="h-52 sm:h-64 md:h-72 lg:w-1/2 flex items-center justify-center">
             <img
-        
+              alt="app illustration 2"
               src="/dappa.png"
-              fill
-              style={{ objectFit: "contain", objectPosition: "center" }}
+              className="w-full h-full object-contain object-center"
             />
           </div>
         </div>

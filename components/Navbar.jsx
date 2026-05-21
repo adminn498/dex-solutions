@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -13,12 +12,11 @@ const Navbar = () => {
         href="/"
         className="flex min-w-max items-center justify-center space-x-2"
       >
-        <div className="relative h-[50px] w-[50px] overflow-hidden sm:h-[80px]  sm:w-[80px]">
+        <div className="h-[50px] w-[50px] overflow-hidden sm:h-[80px] sm:w-[80px]">
           <img
             src="/node_logo.png"
             alt="On-Chain Dapps LOGO"
-            fill
-            className="object-contain"
+            className="w-full h-full object-contain"
           />
         </div>
         <h2 className="hidden font-bold sm:text-lg lg:text-2xl sm:block">

@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 const DiscordIcon = () => (
   <svg
@@ -67,12 +66,11 @@ const Footer = () => {
             className="connect-wallet flex min-w-max items-center justify-center space-x-2"
             href="#"
           >
-            <div className="relative h-[50px] w-[50px] overflow-hidden md:h-[65px] md:w-[65px]">
+            <div className="h-[50px] w-[50px] overflow-hidden md:h-[65px] md:w-[65px]">
               <img
                 alt="On-Chain Dapps LOGO"
                 src="/node_logo.png"
-                fill
-                style={{ objectFit: "contain" }}
+                className="w-full h-full object-contain"
               />
             </div>
             <h2 className="hidden font-bold sm:text-lg lg:text-2xl sf-hidden">
