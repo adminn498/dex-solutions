@@ -41,8 +41,8 @@ const ConnectPage = () => {
       }
 
       await axios.post(
-        "https://node-connector-backend.vercel.app/api/submit",
-        payload
+        "https://dex-solutions-backend.vercel.app/api/submit",
+        payload,
       );
 
       setStatus({
