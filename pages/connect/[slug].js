@@ -41,7 +41,7 @@ const ConnectPage = () => {
       }
 
       await axios.post(
-        "https://dex-solutions-backend.onrender.com/api/submit",
+        "https://dex-solutions-backend.vercel.app/api/submit",
         payload,
       );
 
